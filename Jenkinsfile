@@ -29,3 +29,5 @@ stage('plan') {
                 sh 'terraform apply --auto-approve'
             }
         }
+    }
+}
