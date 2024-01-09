@@ -9,25 +9,23 @@ pipeline {
         }
         stage('format the code') {
             steps {
-                 sh 'terraform fmt'
+               sh 'terraform fmt'
             }
         }
-         stage('vaildate') {
+         stage('validate') {
             steps {
                 sh 'terraform validate'
             }
         }
-    
-
-stage('plan') {
+     stage('plan') {
             steps {
                 sh 'terraform plan'
             }
         }
         stage('apply') {
             steps {
-                sh 'terraform apply --auto-approve'
+                sh 'terraform destroy --auto-approve'
             }
         }
-    }
+    }        
 }
